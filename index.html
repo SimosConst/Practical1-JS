@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html>
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html> -->
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
+    <!-- <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <!-- <style>
         th {
             color: #4679bd;
         }
@@ -14,47 +14,49 @@
             border: 2px solid black;
             border-style: double;
         }
-    </style>
+    </style> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="script.js"></script>
 
 </head>
 
 
 <body>
+    <div class="container" align="center">
+        <!-- <input type="file" id="uploadfile" onchange="readFromFile(this);"> -->
+        <input type="file" id="uploadfile" accept=".csv" onchange="readFromFile(this, 'Select1');" />
+        <div>
+            <!-- <input id="button_load" type="button" value="GroupBy" onclick="createTableToElement('Select1','Table1')" /> -->
+            <select id="Select1" onchange="createTableToElement('Select1','Table1')">
+                <option value="" >----</option>
+            </select>
+        </div>
+        <table id="Table1" class="table1" align="center">
+            <thead>
+                <tr>
+                    <th>head1</th>
+                    <th>head2</th>
+                    <th>head3</th>
+                    <th>head4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cell1_1</td>
+                    <td>cell2_1</td>
+                    <td>cell3_1</td>
+                    <td>cell4_1</td>
+                </tr>
+                <tr>
+                    <td>cell1_2</td>
+                    <td>cell2_2</td>
+                    <td>cell3_2</td>
+                    <td>cell4_2</td>
+                </tr>
 
-    <!-- <input type="file" id="uploadfile" onchange="readFromFile(this);"> -->
-    <input type="file" id="uploadfile" accept=".csv" onchange="readFromFile(this, 'Select1');" />
-    <div>
-        <!-- <input id="button_load" type="button" value="GroupBy" onclick="createTableToElement('Select1','Table1')" /> -->
-        <select id="Select1" onchange="createTableToElement('Select1','Table1')">
-            <option value="" >----</option>
-        </select>
+            </tbody>
+        </table>
     </div>
-    <table id="Table1">
-        <thead>
-            <tr>
-                <th>head1</th>
-                <th>head2</th>
-                <th>head3</th>
-                <th>head4</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>cell1_1</td>
-                <td>cell2_1</td>
-                <td>cell3_1</td>
-                <td>cell4_1</td>
-            </tr>
-            <tr>
-                <td>cell1_2</td>
-                <td>cell2_2</td>
-                <td>cell3_2</td>
-                <td>cell4_2</td>
-            </tr>
-
-        </tbody>
-    </table>
 </body>
 
 </html>
