@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        th {
+            color: #4679bd;
+        }
+        
+        tr {
+            border: 2px solid black;
+            border-style: double;
+        }
+    </style>
+    <script type="text/javascript" src="script.js"></script>
+
+</head>
+
+
+<body>
+
+    <input type="file" id="uploadfile">
+    <div>
+        <input id="button_load" type="button" value="load" onclick="readImage('uploadfile', '1')" />
+        <select id="Select1" name="D1">
+
+            <option value="all">All</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+    </div>
+    <table id="1">
+        <thead>
+            <tr>
+                <th>head1</th>
+                <th>head2</th>
+                <th>head3</th>
+                <th>head4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>cell1_1</td>
+                <td>cell2_1</td>
+                <td>cell3_1</td>
+                <td>cell4_1</td>
+            </tr>
+            <tr>
+                <td>cell1_2</td>
+                <td>cell2_2</td>
+                <td>cell3_2</td>
+                <td>cell4_2</td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+
+</html>
