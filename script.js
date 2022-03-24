@@ -20,7 +20,7 @@ function readFromFile(file_elem, sel_elem) {
     console.log(file_elem)
     if (file_elem.files && file_elem.files[0]) {
         let reader = new FileReader();
-        reader.readAsBinaryString(file_elem.files[0]);
+        reader.readAsText(file_elem.files[0]);
         reader.onload = function(e) {
             console.log(e);
             obj_csv.size = e.total;
