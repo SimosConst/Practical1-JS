@@ -1,5 +1,5 @@
-<!-- <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html> -->
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -17,43 +17,209 @@
     </style> -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="script.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#Table1").hover(function() {
+                alert("Mouse down over p1!");
+            });
+        });
+    </script> -->
 
 </head>
 
 
 <body>
     <div class="container" align="center">
+        <h1>JS CSV Loader & Filtering</h1>
         <!-- <input type="file" id="uploadfile" onchange="readFromFile(this);"> -->
-        <input type="file" id="uploadfile" accept=".csv" onchange="readFromFile(this, 'Select1');" />
-        <div>
+
+        <div class="usrelems">
+            <input type="file" id="uploadfile" accept=".csv" onchange="readFromFile(this, 'Select1');" />
             <!-- <input id="button_load" type="button" value="GroupBy" onclick="createTableToElement('Select1','Table1')" /> -->
-            <select id="Select1" onchange="createTableToElement('Select1','Table1')">
+            <select id="Select1" onchange="createTableToElement(this,'Table1')">
                 <option value="" >----</option>
             </select>
+            <input type="text" value="Search" onkeydown="filterTbl(this, 'Table1') ">
         </div>
         <table id="Table1" class="table1" align="center">
             <thead>
                 <tr>
-                    <th>head1</th>
-                    <th>head2</th>
-                    <th>head3</th>
-                    <th>head4</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Manager</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>cell1_1</td>
-                    <td>cell2_1</td>
-                    <td>cell3_1</td>
-                    <td>cell4_1</td>
+                    <td>Simon Van Gend</td>
+                    <td>Sales</td>
+                    <td>50000</td>
+                    <td>Juan Mendoza</td>
                 </tr>
                 <tr>
-                    <td>cell1_2</td>
-                    <td>cell2_2</td>
-                    <td>cell3_2</td>
-                    <td>cell4_2</td>
+                    <td>Kaya Begam</td>
+                    <td>Sales</td>
+                    <td>31000</td>
+                    <td>Simon Van Gend</td>
                 </tr>
-
+                <tr>
+                    <td>Lucinda Jordaan</td>
+                    <td>Sales</td>
+                    <td>25000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Sarah Murdock</td>
+                    <td>Sales</td>
+                    <td>35000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Dorian Gruber</td>
+                    <td>Sales</td>
+                    <td>37000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Kris Snyman</td>
+                    <td>Sales</td>
+                    <td>31000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Mandy Raubenheimer</td>
+                    <td>Sales</td>
+                    <td>22000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Tim Palmer</td>
+                    <td>Sales</td>
+                    <td>31000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Roy Potterill</td>
+                    <td>Sales</td>
+                    <td>25000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Chris Wills</td>
+                    <td>Sales</td>
+                    <td>35000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Tasneen Fataar</td>
+                    <td>Sales</td>
+                    <td>37000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Stephanie Summer</td>
+                    <td>Sales</td>
+                    <td>31000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Seth Stromboli</td>
+                    <td>Sales</td>
+                    <td>22000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Charlotte Jenkins</td>
+                    <td>Sales</td>
+                    <td>31000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Jay Taylor</td>
+                    <td>Sales</td>
+                    <td>25000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Guy Daniel</td>
+                    <td>Sales</td>
+                    <td>35000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Rosie Smithells</td>
+                    <td>Sales</td>
+                    <td>37000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Daniel Richardson</td>
+                    <td>Sales</td>
+                    <td>31000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Poppy Dinsey</td>
+                    <td>Sales</td>
+                    <td>22000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Jennifer Zenquis</td>
+                    <td>Sales</td>
+                    <td>31000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Marco Jim Morrison Pouyat</td>
+                    <td>Sales</td>
+                    <td>25000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Adriaan Cornelius Brand</td>
+                    <td>Sales</td>
+                    <td>35000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Barend Dewet</td>
+                    <td>Sales</td>
+                    <td>37000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Yolanda Van Wyk</td>
+                    <td>Sales</td>
+                    <td>31000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Rosie Motene</td>
+                    <td>Sales</td>
+                    <td>22000</td>
+                    <td>Simon Van Gend</td>
+                </tr>
+                <tr>
+                    <td>Teresa Valente</td>
+                    <td>Marketing</td>
+                    <td>22000</td>
+                    <td>Hannah Paton</td>
+                </tr>
+                <tr>
+                    <td>Melissa Demyan</td>
+                    <td>Marketing</td>
+                    <td>31000</td>
+                    <td>Hannah Paton</td>
+                </tr>
+                <tr>
+                    <td>Sandra Kriek</td>
+                    <td>Accounts</td>
+                    <td>31000</td>
+                    <td>Simone Udwin</td>
+                </tr>
             </tbody>
         </table>
     </div>
